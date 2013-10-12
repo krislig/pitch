@@ -74,3 +74,7 @@ def data():
       LOAD('default','data.load',args='tables',ajax=True,user_signature=True)
     """
     return dict(form=crud())
+
+def entry_post():
+    form = crud.create(db.post)
+    return dict(form=form)

@@ -74,8 +74,7 @@ use_janrain(auth, filename='private/janrain.key')
 ##
 ## More API examples for controllers:
 ##
-## >>> db.mytable.insert(myfield='value')
-## >>> rows=db(db.mytable.myfield=='value').select(db.mytable.ALL)
+## >>> db.mytable.insert(myfield='value')## >>> rows=db(db.mytable.myfield=='value').select(db.mytable.ALL)
 ## >>> for row in rows: print row.id, row.myfield
 #########################################################################
 
@@ -83,5 +82,5 @@ use_janrain(auth, filename='private/janrain.key')
 # auth.enable_record_versioning(db)
 
 db.define_table('post',
-    Field('content', 'text'),
+    Field('post_content', 'text'),
     Field('user_id', db.auth_user))
