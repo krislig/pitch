@@ -75,6 +75,7 @@ def data():
     """
     return dict(form=crud())
 
+@auth.requires_login()
 def entry_post():
     form = crud.create(db.post)
     return dict(form=form)
