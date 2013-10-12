@@ -11,15 +11,12 @@
 
 
 def index():
-    """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
+   """ Show all users and posts """
 
-    if you need a simple wiki simple replace the two lines below with:
-    return auth.wiki()
-    """
-    response.flash = T("Welcome to web2py!")
-    return dict(message=T('Hello World'))
+   users = db(db.auth_user.id > 0).select()
+   posts = db(db.post.id > 0).select()
+
+   return dict(users=users, posts=posts)
 
 
 def user():
